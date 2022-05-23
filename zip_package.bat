@@ -1,0 +1,1 @@
+"C:\Program Files\7-Zip\7z.exe" a pkg.zip manifest.json h2q_background.js icon16.png icon48.png icon128.png
