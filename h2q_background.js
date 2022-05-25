@@ -8,6 +8,10 @@ chrome.action.onClicked.addListener((tab) => {
    * NOTE: document.body.innerHTML のサイズが大きいと重くなりそう
    */
   const toQuiz = () => {
+    // <style>をページ内に追加
+    const styleHtmlStr = `<style> .chrome_ext_h2q_btn * { visibility: hidden; } </style>`;
+    document.head.insertAdjacentHTML(`beforeend`, styleHtmlStr);
+
     // <body>内部のHTMLを文字列として取得
     const bodyHtmlStr = document.body.innerHTML;
 
@@ -23,11 +27,11 @@ chrome.action.onClicked.addListener((tab) => {
     ].join(`; `);
 
     // ボタンのonclick属性値
-    const onclickCode = `this.style.color = null; this.style.userSelect = null;`;
+    const onclickCode = `this.style.color = null; this.style.userSelect = null; this.classList.remove('chrome_ext_h2q_btn')`;
 
     // 【〇〇】を<button>に変換
     const newBodyHtmlStr = bodyHtmlStr
-      .replace(/【/g, `<button style="${btnStyleAttr}" onclick="${onclickCode}">`)
+      .replace(/【/g, `<button class="chrome_ext_h2q_btn" style="${btnStyleAttr}" onclick="${onclickCode}">`)
       .replace(/】/g, `</button>`);
 
     // 描画
