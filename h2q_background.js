@@ -19,10 +19,11 @@ chrome.action.onClicked.addListener((tab) => {
     const btnStyleAttr = [
       `color: transparent`,
       `display: inline-block`,
-      `margin: 0 0.25rem`,
+      `margin: 0.25rem 0.25rem`,
       `background-color: #EF9A9A`,
       `font-weight: bold`,
-      `border: none;`,
+      `border: none`,
+      `min-width: 4rem`,
       `user-select: none` // 選択できないようにする (選択すると答えが分かってしまうため)
     ].join(`; `);
 
