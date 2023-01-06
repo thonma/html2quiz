@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "version": "1.2",
+  "version": "1.3",
   "name": "HTML to Quiz",
   "short_name": "h2q",
   "description": "ページ中の【○○】をクイズのように表示することができます。",
