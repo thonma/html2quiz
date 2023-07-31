@@ -41,7 +41,6 @@ chrome.action.onClicked.addListener((tab) => {
       `background-color: #EF9A9A`,
       `font-weight: bold`,
       `border: none`,
-      `min-width: 4rem`,
       `cursor: pointer`,
       `user-select: none` // 選択できないようにする (選択すると答えが分かってしまうため)
     ].join(`; `);
